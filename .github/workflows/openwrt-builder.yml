@@ -81,6 +81,10 @@ jobs:
    
     #- name: SSH远程连接服务器配置固件
     #  if: env.SSH_ACTIONS == 'true' 
+
+    
+    - name: Setup Debug Session
+        uses: csexton/debugger-action@master
     
     - name: Download package
       id: package
