@@ -78,14 +78,11 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-   
-    #- name: SSH远程连接服务器配置固件
-    #  if: env.SSH_ACTIONS == 'true' 
 
-    
-    - name: Setup Debug Session
-        uses: csexton/debugger-action@master
-    
+    - uses: actions/checkout@v4
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+          
     - name: Download package
       id: package
       run: |
